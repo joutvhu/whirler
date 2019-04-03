@@ -1,35 +1,41 @@
 {
-    "name": "@whirler/server",
-    "version": "0.0.2",
-    "description": "A library support development single endpoint api.",
-    "author": "Jout V Hu (Giao Ho)",
-    "license": "MIT",
-    "main": "lib/index.js",
-    "directories": {
-        "lib": "./lib"
-    },
-    "files": [
-        "lib",
-        "README.md",
-        "LICENSE"
-    ],
-    "homepage": "https://github.com/joutvhu/whirler",
-    "bugs": {
-        "url": "https://github.com/joutvhu/whirler/issues"
-    },
-    "repository": {
-        "type": "git",
-        "url": "http://github.com/joutvhu/whirler.git"
-    },
-    "keywords": [
-        "whirler",
-        "whirler server",
-        "whirler js",
-        "single endpoint",
-        "api",
-        "method"
-    ],
-    "engines": {
-        "node": ">= 8.x"
-    }
+  "name": "@whirler/server",
+  "version": "0.0.2",
+  "description": "A library support development single endpoint api.",
+  "author": "Jout V Hu (Giao Ho)",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "./lib"
+  },
+  "files": [
+    "lib",
+    "README.md",
+    "LICENSE"
+  ],
+  "homepage": "https://github.com/joutvhu/whirler",
+  "bugs": {
+    "url": "https://github.com/joutvhu/whirler/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/joutvhu/whirler.git"
+  },
+  "keywords": [
+    "whirler",
+    "whirler server",
+    "whirler js",
+    "single endpoint",
+    "api",
+    "method"
+  ],
+  "engines": {
+    "node": ">= 8.x"
+  },
+  "scripts": {
+    "test": "jest --config=config/jest.config.js"
+  },
+  "devDependencies": {
+    "jest": "^24.7.0"
+  }
 }
