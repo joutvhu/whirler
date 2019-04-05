@@ -1,6 +1,6 @@
 {
     "name": "@whirler/server",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "A library support development single endpoint api.",
     "author": "Jout V Hu (Giao Ho)",
     "license": "MIT",
@@ -31,5 +31,13 @@
     ],
     "engines": {
         "node": ">= 8.x"
+    },
+    "scripts": {
+        "lint": "eslint --config ./config/.eslintrc ./lib/",
+        "test": "jest --verbose --config=config/jest.config.js"
+    },
+    "devDependencies": {
+        "eslint": "^5.16.0",
+        "jest": "^24.7.0"
     }
 }
