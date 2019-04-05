@@ -3,9 +3,13 @@
 const {combine} = require('#index');
 const {stringConstants, BundleABC, WhirlerA, WhirlerB, WhirlerC} = require('../prepare');
 
+test('combine one Whirler', () => {
+    expect(combine('BundleA', {WhirlerA})).toHaveProperty('name', 'WhirlerA');
+});
+
 test('combine two Whirlers', () => {
     expect(combine('BundleAB', WhirlerA, WhirlerB)).toHaveProperty('name', 'BundleAB');
-    expect(combine('BundleAC', WhirlerA, WhirlerC)).toHaveProperty('name', 'BundleAC');
+    expect(combine('BundleAC', { WhirlerA, WhirlerC })).toHaveProperty('name', 'BundleAC');
 });
 
 test('combine three Whirlers', () => {

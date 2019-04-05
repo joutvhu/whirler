@@ -7,7 +7,8 @@ const stringConstants = {
     textA: 'Content of textA',
     textB: 'Content of textB',
     textC: 'Content of textC',
-    error: 'Message of error'
+    error: 'Message of error',
+    notExecuted: 'Not executed.'
 };
 
 class SubWhirlerCore extends WhirlerCore {
@@ -23,6 +24,25 @@ class OverriddenCall extends Whirler {
 }
 
 class WhirlerA extends Whirler {
+    middleware(content) {
+        if(content.function == 'stopFunc')
+            content.stop = true;
+        else if(content.function == 'restoreName')
+            content = {};
+
+        return content;
+    }
+
+    stopFunc() {
+        return stringConstants.notExecuted;
+    }
+
+    restoreName(arg) {
+        if(arg)
+            return stringConstants.textA;
+        else return stringConstants.textB;
+    }
+
     getText() {
         return stringConstants.textA;
     }

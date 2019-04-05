@@ -1,7 +1,7 @@
 'use strict';
 
-const {Caller, ErrorMessages, combine} = require('#index');
-const {stringConstants, WhirlerA, callerC, callerABC, callerBIB} = require('../prepare');
+const {Caller, ErrorMessages} = require('#index');
+const {stringConstants, WhirlerA, callerA, callerB, callerC, callerAC, callerEF, callerABC, callerBIB} = require('../prepare');
 
 test('create caller fail', () => {
     expect(() => new Caller()).toThrow(ErrorMessages.PROVIDED_WHIRLER);
@@ -47,4 +47,24 @@ test('call function with array namespace', async () => {
         namespace: ['WhirlerC'],
         function: 'getText'
     })).toBe(stringConstants.textC);
+});
+
+test('stop function in midway', async () => {
+    expect(callerAC.call({
+        namespace: 'WhirlerA',
+        function: 'stopFunc'
+    })).rejects.toThrow(ErrorMessages.FORCED_STOP);
+});
+
+test('no provide namespace', async () => {
+    expect(callerEF.call({
+        function: 'getText'
+    })).rejects.toThrow(ErrorMessages.FUNCTION_NOT_EXIST);
+});
+
+test('restore function name', async () => {
+    expect(await callerA.call({
+        function: 'restoreName',
+        arguments: ['arg']
+    })).toBe(stringConstants.textB);
 });
