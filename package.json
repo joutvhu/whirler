@@ -31,5 +31,13 @@
     ],
     "engines": {
         "node": ">= 8.x"
+    },
+    "scripts": {
+        "lint": "eslint --config ./config/.eslintrc ./lib/",
+        "test": "jest --verbose --config=config/jest.config.js"
+    },
+    "devDependencies": {
+        "eslint": "^5.16.0",
+        "jest": "^24.7.0"
     }
 }
