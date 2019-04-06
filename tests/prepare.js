@@ -23,6 +23,16 @@ class OverriddenCall extends Whirler {
     }
 }
 
+class FunctionInvalid extends Whirler {
+    Test() {
+        return stringConstants.textA;
+    }
+
+    _Test() {
+        return stringConstants.textA;
+    }
+}
+
 class WhirlerA extends Whirler {
     middleware(content) {
         if(content.function == 'stopFunc')
@@ -92,6 +102,7 @@ module.exports = {
     stringConstants,
     SubWhirlerCore,
     OverriddenCall,
+    FunctionInvalid,
     WhirlerA,
     WhirlerB,
     WhirlerC,

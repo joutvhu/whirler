@@ -1,8 +1,8 @@
 'use strict';
 
 const {ErrorMessages} = require('#index');
-const {OverridingError} = require('#error/OtherErrors');
-const {stringConstants, SubWhirlerCore, OverriddenCall, WhirlerA, WhirlerB, WhirlerC} = require('../prepare');
+const {OverridingError, FormattedError} = require('#error/OtherErrors');
+const {stringConstants, SubWhirlerCore, OverriddenCall, FunctionInvalid, WhirlerA, WhirlerB, WhirlerC} = require('../prepare');
 
 test('error override WhirlerCore', () => {
     expect(() => new SubWhirlerCore()).toThrow(OverridingError);
@@ -10,6 +10,10 @@ test('error override WhirlerCore', () => {
 
 test('error override call function', () => {
     expect(() => new OverriddenCall()).toThrow(OverridingError);
+});
+
+test('error function name invalid', () => {
+    expect(() => new FunctionInvalid()).toThrow(FormattedError);
 });
 
 test('call function with arguments', async () => {
