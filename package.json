@@ -5,6 +5,7 @@
     "author": "Jout V Hu (Giao Ho)",
     "license": "MIT",
     "main": "lib/index.js",
+    "module": "lib/index.mjs",
     "directories": {
         "lib": "./lib"
     },
@@ -13,6 +14,9 @@
         "README.md",
         "LICENSE"
     ],
+    "publishConfig": {
+        "access": "public"
+    },
     "homepage": "https://github.com/joutvhu/whirler",
     "bugs": {
         "url": "https://github.com/joutvhu/whirler/issues"
@@ -33,10 +37,14 @@
         "node": ">= 8.x"
     },
     "scripts": {
-        "lint": "eslint --config ./config/.eslintrc ./lib/",
+        "build": "babel --config-file ./config/.babelrc ./lib/ --out-dir ./lib/",
+        "lint": "eslint --config ./config/.eslintrc --ext=mjs ./lib/",
         "test": "jest --verbose --config=config/jest.config.js"
     },
     "devDependencies": {
+        "@babel/cli": "^7.4.3",
+        "@babel/core": "^7.4.3",
+        "@babel/plugin-transform-modules-commonjs": "^7.4.3",
         "eslint": "^5.16.0",
         "jest": "^24.7.0"
     }
