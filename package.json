@@ -39,6 +39,7 @@
     "scripts": {
         "build": "babel --config-file ./config/.babelrc ./lib/ --out-dir ./lib/",
         "lint": "eslint --config ./config/.eslintrc --ext=mjs ./lib/",
+        "lint:js": "eslint --config ./config/.eslintrc --ext=js ./lib/",
         "test": "jest --verbose --config=config/jest.config.js"
     },
     "devDependencies": {
