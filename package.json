@@ -2,8 +2,6 @@
     "name": "@whirler/server",
     "version": "0.0.4",
     "description": "A library support development single endpoint api.",
-    "author": "Jout V Hu (Giao Ho)",
-    "license": "MIT",
     "main": "lib/index.js",
     "directories": {
         "lib": "./lib"
@@ -13,9 +11,9 @@
         "README.md",
         "LICENSE"
     ],
-    "homepage": "https://github.com/joutvhu/whirler",
-    "bugs": {
-        "url": "https://github.com/joutvhu/whirler/issues"
+    "scripts": {
+        "lint": "eslint --config ./config/.eslintrc ./lib/",
+        "test": "jest --verbose --config=config/jest.config.js"
     },
     "repository": {
         "type": "git",
@@ -29,15 +27,20 @@
         "api",
         "method"
     ],
+    "author": "Jout V Hu (Giao Ho)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/joutvhu/whirler/issues"
+    },
+    "homepage": "https://github.com/joutvhu/whirler",
     "engines": {
         "node": ">= 8.x"
-    },
-    "scripts": {
-        "lint": "eslint --config ./config/.eslintrc ./lib/",
-        "test": "jest --verbose --config=config/jest.config.js"
     },
     "devDependencies": {
         "eslint": "^5.16.0",
         "jest": "^24.7.0"
+    },
+    "dependencies": {
+        "extension-props": "^0.9.0"
     }
 }
