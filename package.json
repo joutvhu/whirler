@@ -41,6 +41,6 @@
         "jest": "^24.7.0"
     },
     "dependencies": {
-        "extension-props": "^0.9.0"
+        "extension-props": "^0.9.1"
     }
 }
