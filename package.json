@@ -11,6 +11,9 @@
         "README.md",
         "LICENSE"
     ],
+    "publishConfig": {
+        "access": "public"
+    },
     "scripts": {
         "lint": "eslint --config ./config/.eslintrc ./lib/",
         "test": "jest --verbose --config=config/jest.config.js"
