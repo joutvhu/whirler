@@ -38,7 +38,7 @@ class WhirlerA extends Whirler {
         if(content.function == 'stopFunc')
             content.stop = true;
         else if(content.function == 'restoreName')
-            content = {};
+            content = {type: content.type};
 
         return content;
     }

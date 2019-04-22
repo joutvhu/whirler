@@ -20,11 +20,13 @@ test('call function in bundle', async () => {
     const whirlerObj = new BundleABC();
 
     expect(await whirlerObj.call({
+        type: 'call',
         namespace: ['WhirlerA'],
         function: 'getText'
     })).toBe(stringConstants.textA);
 
     expect(await whirlerObj.call({
+        type: 'call',
         namespace: ['WhirlerC'],
         function: 'getText'
     })).toBe(stringConstants.textC);
