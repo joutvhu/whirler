@@ -16,6 +16,7 @@ test('call function in caller', async () => {
     const expected = firstNumber + secondNumber;
 
     expect(await callerC.call({
+        type: 'call',
         function: 'sumTowNumbers',
         arguments: [firstNumber, secondNumber]
     })).toBe(expected);
@@ -26,12 +27,14 @@ test('call function with string namespace', async () => {
     const expected = firstNumber + secondNumber;
 
     expect(await callerABC.call({
+        type: 'call',
         namespace: 'WhirlerC',
         function: 'sumTowNumbers',
         arguments: [firstNumber, secondNumber]
     })).toBe(expected);
 
     expect(await callerBIB.call({
+        type: 'call',
         namespace: 'BundleEF.WhirlerE',
         function: 'getText'
     })).toBe(stringConstants.textA);
@@ -39,11 +42,13 @@ test('call function with string namespace', async () => {
 
 test('call function with array namespace', async () => {
     expect(await callerBIB.call({
+        type: 'call',
         namespace: ['BundleEF', 'WhirlerF'],
         function: 'getText'
     })).toBe(stringConstants.textB);
 
     expect(await callerBIB.call({
+        type: 'call',
         namespace: ['WhirlerC'],
         function: 'getText'
     })).toBe(stringConstants.textC);
@@ -51,6 +56,7 @@ test('call function with array namespace', async () => {
 
 test('stop function in midway', async () => {
     expect(callerAC.call({
+        type: 'call',
         namespace: 'WhirlerA',
         function: 'stopFunc'
     })).rejects.toThrow(ErrorMessages.FORCED_STOP);
@@ -58,12 +64,14 @@ test('stop function in midway', async () => {
 
 test('no provide namespace', async () => {
     expect(callerEF.call({
+        type: 'call',
         function: 'getText'
     })).rejects.toThrow(ErrorMessages.FUNCTION_NOT_EXIST);
 });
 
 test('restore function name', async () => {
     expect(await callerA.call({
+        type: 'call',
         function: 'restoreName',
         arguments: ['arg']
     })).toBe(stringConstants.textB);

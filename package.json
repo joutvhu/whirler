@@ -1,6 +1,6 @@
 {
     "name": "@whirler/server",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "description": "A library support development single endpoint api.",
     "main": "lib/index.js",
     "directories": {
@@ -44,6 +44,6 @@
         "jest": "^24.7.0"
     },
     "dependencies": {
-        "extension-props": "^0.9.4"
+        "extension-props": "^0.9.6"
     }
 }
